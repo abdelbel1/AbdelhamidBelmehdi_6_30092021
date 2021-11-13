@@ -6,12 +6,14 @@ Les commandes suivantes sont à effectuer depuis le dossier racine du projet.<br
 $ git clone https://github.com/abdelbel1/AbdelhamidBelmehdi__30092021.git<br />
 #### Lancement du front
 $ cd ./frontend<br />
-$ npm install node-sass
+$ npm install node-sass<br />
 $ ng serve<br />
 #### Lancement du serveur Node
 $ cd ./backend<br />
-$ npm install
-$ node server
+$ npm install<br />
+$ node server<br />
+#### Lancement de l'API
+$ Se connecter à l'url : http://localhost:4200
 <br /><br />
 ## Technologies utilisées
 - Node.JS / Express / MongoDB<br />
