@@ -30,18 +30,6 @@ exports.createSauce = (req, res, next) => {
 
 // Modifier une sauce
 exports.modifySauce = (req, res, next) => {
-    const sauceObject = req.file ?
-        {
-            ...JSON.parse(req.body.sauce),
-            imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
-        } : { ...req.body }
-    Sauce.updateOne({ _id: req.params.id }, { ...sauceObject, _id: req.params.id })
-        .then(() => res.status(200).json({ message: 'Sauce modifiée !' }))
-        .catch(error => res.status(400).json({ error }))
-}
-    
-
-exports.modifySauce = (req, res, next) => {
     Sauce.findOne({ _id: req.params.id }) //nous utilisons l'ID que nous recevons comme paramètre pour accéder a la sauce correspondant dans la base de données ;
     .then((sauce) => {
     const filename = sauce.imageUrl.split("/images/")[1]; //nous utilisons le fait de savoir que notre URL d'image contient un segment /images/ pour séparer le nom de fichier ;
